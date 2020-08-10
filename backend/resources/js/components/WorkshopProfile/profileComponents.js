@@ -1,0 +1,16 @@
+export default {
+    PROFILE_BASIC_SETTINGS: 'workshop-basic-settings',
+    PROFILE_SERVICES: 'services',
+    PROFILE_ADDITIONAL_SERVICES: 'additional-services',
+    PROFILE_MAKES: 'makes',
+    PROFILE_PAYMENT_OPTIONS: 'payment-options',
+    PROFILE_SCHEDULE: 'schedule',
+    PROFILE_SPARE_PARTS: 'spare-parts',
+    PROFILE_WARRANTY: 'warranty',
+    PROFILE_LOGO_CHANGE: 'logo-change',
+    PROFILE_CERTIFICATES: 'certificates',
+    PROFILE_EMAIL_SETUP: 'email-setup',
+    PROFILE_CHANGE_PASSWORD: 'change-password',
+    PROFILE_USER_REQUESTS: 'user-requests',
+    PROFILE_WORKSHOP_OFFERS: 'workshop-offers',
+}

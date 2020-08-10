@@ -1,0 +1,3 @@
+export default {
+    ERROR_NO_RESPONSE_DATA_FIELD: 'ERROR_NO_RESPONSE_DATA_FIELD'
+};

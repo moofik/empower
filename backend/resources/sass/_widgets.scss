@@ -1,0 +1,90 @@
+.frame {
+    height: 325px;
+    border-right: 2px solid #000;
+    position: relative;
+
+    .element {
+        font-family: "SF UI Text Bold", sans-serif;
+        line-height: 1;
+        display: block;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        content: '';
+        height: 2px;
+        background: #000;
+        width: 90%;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        content: '';
+        height: 2px;
+        background: #000;
+        width: 90%;
+    }
+
+    &.w-frame-full {
+       &::before, &::after {
+           width: 100%;
+       }
+    }
+
+    &.mobile {
+        border: 0;
+        &::before, &::after {
+            display: none;
+        }
+    }
+}
+
+
+.default-tab-wrapper {
+    font-family: "SF UI Font Regular", sans-serif;
+    font-size: 14px;
+    background: #e1e6df;
+    padding: 15px 20px;
+    border-radius: 4px;
+}
+
+.default-td {
+    border-top: 1px solid #cdd4ca;
+    padding: 10px 5px;
+}
+
+.default-thead-tr {
+    color: #929d8e;
+    border-top: 0;
+    padding: 10px 5px;
+
+    &.td-styling {
+        color: black;
+        border-top: 1px solid #cdd4ca;
+        padding: 10px 5px;
+    }
+}
+
+.inverted-table {
+    tr { display: block; float: left; }
+    th, td { display: block; }
+
+    tbody, thead {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    thead {
+        tr {
+            width: 100%;
+        }
+    }
+}

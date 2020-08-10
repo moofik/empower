@@ -1,0 +1,27 @@
+.swiper-wrapper-custom {
+    margin-top: 10%;
+    margin-left: -50px;
+    width: 60%;
+}
+
+.swiper-pagination {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.swiper-pagination-bullets {
+    top: 10px !important;
+    margin-right: 50px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    outline: none;
+    margin: 5px 4px !important;
+    background: rgb(0, 0, 0) !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #f2be54 !important;
+}

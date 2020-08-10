@@ -1,0 +1,106 @@
+version: '3'
+
+services:
+  brainpower-nginx:
+    build: build/nginx
+    image: brainpower/nginx
+    container_name: brainpower-nginx
+    volumes:
+     - "./volumes/nginx/log/:/var/log/nginx/"
+     - "./build/nginx/brainpower.local.conf:/etc/nginx/conf.d/default.conf:ro"
+     - "..:/brainpower:ro"
+    ports:
+     - "80:80"
+    networks:
+     - brainpower
+    depends_on:
+     - brainpower-php-fpm
+
+  brainpower-php-fpm:
+    build: build/php-fpm
+    image: brainpower/php-fpm
+    container_name: brainpower-php-fpm
+    volumes:
+     - "..:/brainpower"
+     - "./build/php-fpm/php.ini:/etc/php/7.3/fpm/php.ini:ro"
+     - "./volumes/data:/opt/data"
+    ports:
+     - "127.0.0.1:9009:9000"
+    environment:
+      XDEBUG_CONFIG: >
+        idekey=PHPSTORM
+        remote_enable=1
+        remote_host=172.84.0.1
+        remote_port=9000
+        profiler_enable=0
+        coverage_enable=0
+    networks:
+     - brainpower
+    depends_on:
+     - brainpower-mysql
+
+  brainpower-php-cli:
+    build: build/php-cli
+    image: brainpower/php-cli
+    container_name: brainpower-php-cli
+    volumes:
+     - "..:/brainpower"
+     - "./build/php-cli/php.ini:/etc/php/7.3/cli/php.ini:ro"
+     - "./volumes/data:/opt/data"
+    ports:
+     - "127.0.0.1:9011:9000"
+     - "127.0.0.1:2222:22"
+    environment:
+      XDEBUG_CONFIG: >
+        idekey=PHPSTORM
+        remote_enable=1
+        remote_host=172.84.0.1
+        remote_port=9000
+        profiler_enable=0
+        coverage_enable=0
+    networks:
+     - brainpower
+    depends_on:
+     - brainpower-mysql
+     - brainpower-php-fpm
+
+  brainpower-mysql:
+    build: build/mysql
+    image: brainpower/mysql
+    container_name: brainpower-mysql
+    volumes:
+      - "./volumes/mydata:/var/lib/mysql"
+      - "./volumes/data:/opt/data"
+      - "./build/mysql/conf.d:/etc/mysql/conf.d"
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_DATABASE: brainpower
+      MYSQL_ROOT_PASSWORD: brainpower
+      MYSQL_PASSWORD: brainpower
+      MYSQL_USER: brainpower
+    networks:
+      - brainpower
+
+  brainpower-node:
+    build: build/node
+    image: brainpower/node
+    container_name: brainpower-node
+    volumes:
+      - "..:/brainpower"
+    ports:
+      - "127.0.0.1:3333:3333"
+    networks:
+      - brainpower
+
+  brainpower-redis:
+    image: redis:3.0
+    container_name: brainpower-redis
+    ports:
+     - "127.0.0.1:6379:6379"
+    networks:
+     - brainpower
+
+networks:
+  brainpower:
+    external: true

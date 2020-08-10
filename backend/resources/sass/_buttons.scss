@@ -1,0 +1,84 @@
+.btn-orange-default {
+    @apply uppercase inline-block bg-deep-orange text-black;
+    text-decoration: none;
+    font-family: "SF UI Text Bold", sans-serif;
+    transition: 0.2s;
+    box-shadow: 5px 5px 2px rgba(25, 26, 29, .34);
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 15px 20px;
+    margin: 17px 0 2px 0;
+}
+
+.btn-flat {
+    box-shadow: none;
+}
+
+.btn-white-default {
+    @extend .btn-orange-default;
+    color: #153e5c;
+    background: white;
+    border: 1px solid #153e5c;
+}
+
+.btn-red-default {
+    @extend .btn-orange-default;
+    color: #fff;
+    background: #dc4c35;
+}
+
+.btn-blue-default {
+    @extend .btn-orange-default;
+    color: #fff;
+    background: #4285F4;
+}
+
+.hover-white-on-blue:hover {
+    background: #153e5c;
+    color: #fff;
+}
+
+.hover-darkgreen:hover {
+    background: #379748;
+}
+
+.btn-transparent-default {
+    @extend .btn-white-default;
+    background: transparent;
+}
+
+.btn-transparent-default-nocursor {
+    @extend .btn-white-default;
+    background: transparent;
+    cursor: initial;
+}
+
+.btn-transparent-nomargin-nocursor {
+    @extend .btn-white-default;
+    margin: 0;
+    background: transparent;
+    cursor: initial;
+}
+
+.btn-green-default {
+    @extend .btn-white-default;
+    background: #52ac62;
+    color: white;
+}
+
+.btn-green-noborder {
+    @extend .btn-green-default;
+    border: none;
+}
+
+.btn-green-nomargin {
+    @extend .btn-green-default;
+    margin: 0;
+}
+
+.btn-red-nomargin {
+    @extend .btn-red-default;
+    margin: 0;
+}
+

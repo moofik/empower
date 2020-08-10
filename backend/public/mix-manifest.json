@@ -1,0 +1,22 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/admin-panel-layout.js": "/admin-panel-layout.js",
+    "/contact-content.js": "/contact-content.js",
+    "/header-title.js": "/header-title.js",
+    "/profile-additional-services.js": "/profile-additional-services.js",
+    "/profile-certificates.js": "/profile-certificates.js",
+    "/profile-change-password.js": "/profile-change-password.js",
+    "/profile-email-setup.js": "/profile-email-setup.js",
+    "/profile-logo-change.js": "/profile-logo-change.js",
+    "/profile-makes.js": "/profile-makes.js",
+    "/profile-payment-options.js": "/profile-payment-options.js",
+    "/profile-schedule.js": "/profile-schedule.js",
+    "/profile-services.js": "/profile-services.js",
+    "/profile-spare-parts.js": "/profile-spare-parts.js",
+    "/profile-warranty.js": "/profile-warranty.js",
+    "/slider-background.js": "/slider-background.js",
+    "/static-background.js": "/static-background.js",
+    "/tender-teaser.js": "/tender-teaser.js",
+    "/workshop-profile-Workshop.js": "/workshop-profile-Workshop.js"
+}

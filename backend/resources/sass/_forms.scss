@@ -1,0 +1,79 @@
+.input-type-text {
+    font-family: "SF UI Text Regular", sans-serif;
+    color: #191a1d;
+    @apply appearance-none border w-11/12 leading-tight;
+    border-color: #153e5c;
+    border-radius: 3px;
+    padding: 10px 0 10px 15px;
+
+    &:focus {
+        box-shadow: 0 0 7px rgb(254, 154, 51);
+        border: none;
+        outline: none;
+    }
+
+    &.no-input-focus-effect {
+        box-shadow: none;
+        border: 1px solid #153e5c;
+    }
+
+    &.required {
+        background: #fff url("/images/req.png") 95% center no-repeat;
+    }
+}
+
+.input-style-text-noborder {
+    @extend .input-type-text;
+    border: 0;
+    padding: 0;
+}
+
+.input-type-select {
+    @apply appearance-none border w-11/12 text-black leading-tight;
+    padding: 10px 0 10px 15px;
+    background: #fff url('/images/pd1.png') 95% center no-repeat;
+    border-color: #153e5c;
+    border-radius: 3px;
+    font-family: "SF UI Text Regular", sans-serif;
+    color: #191a1d;
+}
+
+.form-group-row {
+    @apply flex flex-row items-center;
+}
+
+.form-default-label {
+    @apply block mb-1 text-sm text-gray-800;
+}
+
+.form-unit, .form-note, .form-big-unit {
+    @apply inline-block w-1/2;
+    margin: 10px 0;
+    font-family: "SF UI Font Regular", sans-serif;
+    font-size: 14px;
+}
+
+.form-big-unit {
+    @apply inline-block w-full text-gray-800;
+
+    .select-none {
+        a {
+            outline: none;
+            text-decoration: underline;
+            color: #153e5c;
+            cursor: pointer;
+        }
+    }
+}
+
+.form-note {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-link {
+    outline: none;
+    text-decoration: underline;
+    color: #153e5c;
+    cursor: pointer;
+}
